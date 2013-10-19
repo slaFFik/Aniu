@@ -1,0 +1,18 @@
+{{!--
+cur page: {{pagination.page}}<br/>
+prev page: {{pagination.prev}}<br/>
+next page: {{pagination.next}}<br/>
+posts per page: {{pagination.limit}}<br/>
+total posts: {{pagination.total}}<br/>
+total pages: {{pagination.pages}}<br/><br/>
+--}}
+
+<ul class="pure-paginator">
+
+    {{#if pagination.prev}}
+        <li><a class="pure-button prev" href="/page/{{pagination.prev}}">&#171;</a></li>
+    {{/if}}
+    {{#if pagination.next}}
+        <li><a class="pure-button next" href="/page/{{pagination.next}}">&#187;</a></li>
+    {{/if}}
+</ul>

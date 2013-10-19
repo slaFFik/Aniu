@@ -87,6 +87,10 @@ a:focus {
     padding: 2em 3em 0;
 }
 
+.pure-paginator .pure-button {
+    height: auto;
+}
+
 .post {
     padding-bottom: 2em;
 }
