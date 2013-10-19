@@ -1,0 +1,35 @@
+{{!< default}}
+
+<!-- A wrapper for all the blog posts -->
+<div class="posts">
+    <h3 class="content-subhead">Recent Posts</h3>
+
+    {{#each posts}}
+        <section class="post {{post_class}}">
+            <header class="post-header">
+                {{#if author.image}}
+                    <img class="post-avatar" alt="{{author.name}}'s avatar" src="{{author.image}}" height="48" width="48">
+                {{/if}}
+
+                <h2 class="post-title">
+                    <a href="{{url}}">{{{title}}}</a>
+                </h2>
+
+                <p class="post-meta">
+                    By <span class="post-author">{{author.name}}</span>&nbsp;
+                    {{#if tags}}under <span class="post-category post-category-yui">{{tags separator=", "}}</span>{{/if}}
+                    on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+                </p>
+            </header>
+
+            <div class="post-description">
+                <p>{{excerpt words="100"}}&hellip;</p>
+            </div>
+        </section>
+    {{/each}}
+</div>
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{#if pagination}}
+    {{pagination}}
+{{/if}}
